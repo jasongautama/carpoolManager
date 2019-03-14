@@ -16,13 +16,11 @@ class MyList extends Component {
 
     onCheckPress(member) {
         if (!this.state.checked) {
-            console.log(`I checked the name of ${member.name}`)
             this.setState({checked: true})
             this.props.addMember({member})
             this.props.enableButton(this.props.list)
         }
         else {
-            console.log(`I UNchecked the name of ${member.name}`)
             this.setState({checked: false})
             this.props.removeMember({member})
             this.props.disableButton(this.props.list)     

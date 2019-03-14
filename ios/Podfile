@@ -29,7 +29,7 @@ target 'carpoolMgr' do
   # If you are using React Native <0.54, you will get the following error:
   # "The name of the given podspec `GLog` doesn't match the expected one `glog`"
   # Use the following line instead:
-  #pod 'GLog', :podspec => "#{rn_path}/third-party-podspecs/GLog.podspec"
+  # pod 'GLog', :podspec => "#{rn_path}/third-party-podspecs/GLog.podspec"
   pod 'Folly', :podspec => "#{rn_path}/third-party-podspecs/Folly.podspec"
 
   # react-native-maps dependencies
@@ -38,6 +38,8 @@ target 'carpoolMgr' do
   # pod 'GoogleMaps'  # Uncomment this line if you want to support GoogleMaps on iOS
   # pod 'Google-Maps-iOS-Utils' # Uncomment this line if you want to support GoogleMaps on iOS
   pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+
+  pod 'RNFS', :path => '../node_modules/react-native-fs'
 
 end
 

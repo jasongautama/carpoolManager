@@ -14,26 +14,23 @@ class NavigationForm extends Component {
         origin: null
     }
 
-    componentDidUpdate(prevProps) {
-        if (prevProps.origin != this.props.origin) {
-            navigator.geolocation.getCurrentPosition((position) => {
-                var lat = parseFloat(position.coords.latitude)
-                var long = parseFloat(position.coords.longitude)
-                
-                var geo = `${lat},${long}`
-                this.props.addressUpdate({prop:'origin', value: geo})
-            }) 
-        }
-    }
-
-    componentWillMount() {
+    updateOrigin() {
         navigator.geolocation.getCurrentPosition((position) => {
             var lat = parseFloat(position.coords.latitude)
             var long = parseFloat(position.coords.longitude)
             
             var geo = `${lat},${long}`
             this.props.addressUpdate({prop:'origin', value: geo})
-        })
+        }) 
+    }
+    componentDidUpdate(prevProps) {
+        if (prevProps.origin != this.props.origin) {
+            this.updateOrigin()
+        }
+    }
+
+    componentWillMount() {
+        this.updateOrigin();
     }
 
     onButtonPress() {
