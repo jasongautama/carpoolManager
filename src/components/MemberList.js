@@ -52,7 +52,8 @@ class MemberList extends Component {
 
           <View style={styles.containerBtn}>
             <Button onPress={this.onClickNavigate.bind(this)}
-                disabled={this.props.disable}> 
+                disabled={this.props.disable}
+                style = {styles.fillBtnStyle}> 
               Navigate 
             </Button>
           </View>
@@ -80,18 +81,43 @@ const styles = {
   },
   paddingBtm: {
     flex: 0.025
+  },
+  fillBtnStyle: {
+    backgroundColor: '#FFC232',
+    color: '#FFFFFF',
+    fontSize: 20,
+    fontFamily: 'Helvetica',
+    textAlign: 'center'
   }
 
 }
 
 const mapStateToProps = (state) => {
-  console.log(state.members)
-  const members = _.map(state.members,(val, uid) => {
+  var result = _.toPairs(state.members)
 
-    return {...val, uid}
+  var members = []
+  for (var i = 0; i < result.length; i++) {
+    var member = result[i][1]
+    const uid = result[i][0]
+
+    member.uid = uid
+    members.push(member)
+  }
+
+//  console.log("This is what the array looks like")
+//  console.log(members)
+
+ //WORKING ON IOS, BUT NOT ON ANDROID
+  /*
+  const members = _.map(state.members, (val, uid) => {
+    // Android --"TypeError: requested keys of a value that is not an object"
+    return {...val, uid} 
   })
   
+  console.log("-----")
+  console.log("This is what the lodash looks like")
   console.log(members)
+  */
   
   const {loading} = state.members
   const list = state.list

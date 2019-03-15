@@ -44,7 +44,9 @@ class MyList extends Component {
                         containerStyle = {styles.backgroundStyle}
                         />
                     }
-                    title = {member.name}/>
+                    title = {member.name}
+                    titleStyle = {styles.textStyle}
+                    />
                 </TouchableWithoutFeedback>
             </View>
         )
@@ -59,6 +61,11 @@ const styles = {
         shadowOffset:{  width: 3,  height: 3,  },
         shadowColor: 'black',
         shadowOpacity: 1.0,
+    },
+    textStyle: {
+        color: '#2400D9',
+        fontSize: 20,
+        fontFamily: 'Helvetica'
     }
     
 }

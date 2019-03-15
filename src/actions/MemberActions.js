@@ -58,8 +58,6 @@ export const membersFetch = () => {
 
   return (dispatch) => {
     dispatch({type: MEMBERS_FETCH}) // change the state where it sets loading:true in MemberReducer
-
-    console.log(currentUser.uid)
     firebase.database().ref(`/users/${currentUser.uid}/members/`)
     .on('value', snapshot => {
       dispatch({type: MEMBERS_FETCH_SUCCESS, payload: snapshot.val()})
