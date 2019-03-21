@@ -30,7 +30,7 @@ export default (state = INITIAL_STATE, action) => {
       return { ...state, ...INITIAL_STATE, user: action.payload};
       // the ...INITIAL_STATE means that reset all the attributes to default value
     case LOGIN_USER_FAIL:
-      return { ...state, loading: false, error: 'Authentication Failed.', password: ''}
+      return { ...state, loading: false, error: 'Invalid Username/Password', password: ''}
     default:
       return state;
   }

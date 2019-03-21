@@ -85,7 +85,7 @@ class NavigationForm extends Component {
 
                 <CardSection>
                     <Button onPress={this.onButtonPress.bind(this)}> 
-                        Navigate 
+                        Start Navigation
                     </Button> 
                 </CardSection>
             </BackgroundImage>

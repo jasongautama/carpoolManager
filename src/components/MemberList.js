@@ -104,19 +104,12 @@ const mapStateToProps = (state) => {
     members.push(member)
   }
 
-//  console.log("This is what the array looks like")
-//  console.log(members)
-
  //WORKING ON IOS, BUT NOT ON ANDROID
   /*
   const members = _.map(state.members, (val, uid) => {
     // Android --"TypeError: requested keys of a value that is not an object"
     return {...val, uid} 
   })
-  
-  console.log("-----")
-  console.log("This is what the lodash looks like")
-  console.log(members)
   */
   
   const {loading} = state.members

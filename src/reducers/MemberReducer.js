@@ -16,7 +16,6 @@ export default (state = INITIAL_STATE, action) => {
     case MEMBERS_FETCH:
       return {...state, loading: true}
     case MEMBERS_FETCH_SUCCESS:
-      console.log(action.payload)
       if (action.payload == null)
         return {...state, loading: false}
       return action.payload

@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import { StyleSheet, View, Text, FlatList, Linking } from 'react-native'
+import { StyleSheet, View, Linking } from 'react-native'
 import _ from 'lodash'
 import { GOOGLE_API } from 'react-native-dotenv'
 import MapView, { Marker } from 'react-native-maps'
-import { CardSection, Button } from './common'
+import { Button } from './common'
 
 class NavigationSummary extends Component {
     state = {
@@ -83,6 +83,7 @@ class NavigationSummary extends Component {
     }
 
     render() {
+        console.log(this.props)
         //const {origin, destination} = this.props.routes
         var addr = []
         var markers = []
@@ -125,6 +126,7 @@ class NavigationSummary extends Component {
             strURL += "/"
         }
 
+        console.log(markers)
         return (
             <View style={styles.container}>
                 <MapView

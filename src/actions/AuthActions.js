@@ -57,7 +57,6 @@ export const loginUser = ({email, password}) => {
  * @param {UserCredential} user 
  */
 const loginUserSuccess = (dispatch, user) => {
-  console.log("successfull")
   dispatch({ type: LOGIN_USER_SUCCESS, payload: user})
   Actions.main()
 };

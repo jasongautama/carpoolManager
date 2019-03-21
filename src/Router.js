@@ -7,8 +7,9 @@ import MemberEdit from './components/MemberEdit';
 import NavigationForm from './components/NavigationForm';
 import NavigationSummary from './components/NavigationSummary';
 const RouterComponent = () => {
+  console.disableYellowBox = true
+  
   return (
-
   <Router 
     sceneStyle = {styles.sceneStyle}
     navigationBarStyle = {styles.barStyle} 
