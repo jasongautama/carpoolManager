@@ -65,12 +65,16 @@ class NavigationSummary extends Component {
         }
         return `${num}st stop`
     }
-    markerFunc(addrArr, address, location, num) {
+    markerFunc(addrArr, address, location, num, memberName) {
         var numStr = this.numStrFunc(num)
-
+        
+        if (memberName === undefined)
+            memberName = ""
+        else
+            memberName += " | "
         addrArr.push(address)
         var marker = {
-            name: numStr,
+            name: `${memberName}${numStr}`,
             description: `${address}`,
             coordinates: {
                 latitude: location.lat,
@@ -95,11 +99,43 @@ class NavigationSummary extends Component {
         numOfRoutes = this.state.data.length
 
         var count = 0
+
+        console.log(numOfRoutes)
+        console.log(this.props)
+
         for (var i = 0; i < numOfRoutes; i++) {
             const { start_address, end_address, start_location, end_location } = this.state.data[i]
             var marker = null
 
-            marker = this.markerFunc(addr, start_address, start_location, count)
+            if (i == 0)
+                marker = this.markerFunc(addr, start_address, start_location, count)
+            else {
+                if (numOfRoutes == 2) {
+                    var memberName = this.props.routes.member.name
+                    marker = this.markerFunc(addr, start_address, start_location, count, memberName)
+                }
+                else {
+                    /**MAKE SOME CHANGES HERE!!! */
+                    console.log (this.props.routes.waypoints)
+                    memberName = ""
+                    console.log (this.props.routes.waypoints.length)
+                    for (var j = 0; j < this.props.routes.waypoints.length; j++) {
+                        const memAddr = this.props.routes.waypoints[j].address
+                        const memName = this.props.routes.waypoints[j].name
+
+                        var rgxMemAddr = memAddr.match(/^(.+?),/g)
+                        var rgxStartAddr = start_address.match(/^(.+?),/g)
+                        
+                        if (rgxMemAddr[0] == rgxStartAddr[0]) {
+                            memberName = memName
+                            break
+                        }
+                    }
+
+                    console.log(memberName)
+                    marker = this.markerFunc(addr, start_address, start_location, count, memberName)
+                }
+            }
             markers.push(marker)
             count++
 
