@@ -19,7 +19,6 @@ export const memberCreate = ({name, phone, address, driving}) => {
     
     Actions.memberList({type: 'reset'}) //route back to memberList Scene and reset the content
     
-    //console.log(currentUser.uid)
     firebase.database().ref(`/users/${currentUser.uid}/members`)
       .push({name, phone, address, driving})
       .then(() => {

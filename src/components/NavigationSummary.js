@@ -15,7 +15,6 @@ class NavigationSummary extends Component {
     componentWillMount() {
         const multipleWayPts = 2
         const { origin, destination } = this.props.routes
-        console.log(this.props)
 
         const length = this.props.routes.waypoints.length
         var or = origin.replace(/ /g, "+");
@@ -83,7 +82,6 @@ class NavigationSummary extends Component {
     }
 
     render() {
-        console.log(this.props)
         //const {origin, destination} = this.props.routes
         var addr = []
         var markers = []
@@ -95,10 +93,6 @@ class NavigationSummary extends Component {
 
         //generate URL link for Google Maps
         numOfRoutes = this.state.data.length
-        console.log(numOfRoutes)
-
-        console.log(this.props)
-        console.log(this.state.data)
 
         var count = 0
         for (var i = 0; i < numOfRoutes; i++) {
@@ -126,7 +120,6 @@ class NavigationSummary extends Component {
             strURL += "/"
         }
 
-        console.log(markers)
         return (
             <View style={styles.container}>
                 <MapView
@@ -134,7 +127,6 @@ class NavigationSummary extends Component {
                         if (!map) {
                             return
                         }
-                        console.log(map)
                         this.state.mapRef = map
                     }}
                     style={styles.map}

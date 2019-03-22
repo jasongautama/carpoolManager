@@ -35,10 +35,6 @@ class NavigationForm extends Component {
 
     onButtonPress() {
 
-        console.log("buttonPressed!");
-        console.log(`origin: ${this.props.origin}`);
-        console.log(`destination: ${this.props.destination}`);
-
         // if one of the fields is empty, display error
         if (!this.props.origin || !this.props.destination) {
             this.setState({showError: !this.state.showError})
@@ -46,7 +42,6 @@ class NavigationForm extends Component {
         }
 
         this.props.submitForm()
-        console.log(this.props)
         Actions.navigationSummary({routes: this.props});
     }
 
