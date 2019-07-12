@@ -10,9 +10,11 @@
     "babel-preset-react-native": "^4.0.1",
     "firebase": "^5.8.6",
     "jest-haste-map": "^24.3.1",
-    "lodash": "^4.17.11",
+    "js-yaml": "^3.13.1",
+    "lodash": "^4.17.14",
+    "mem": "^5.1.1",
     "react": "^16.6.3",
-    "react-native": "0.58.6",
+    "react-native": "^0.60.3",
     "react-native-check-box": "^2.1.7",
     "react-native-dotenv": "^0.2.0",
     "react-native-elements": "^1.1.0",
@@ -22,7 +24,8 @@
     "react-native-vector-icons": "^6.3.0",
     "react-redux": "^6.0.1",
     "redux": "^4.0.1",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "ws": "^7.1.0"
   },
   "devDependencies": {
     "babel-core": "7.0.0-bridge.0",
