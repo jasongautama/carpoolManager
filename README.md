@@ -1,1 +1,1 @@
-![alt text](https://github.com/jasongautama/carpoolManager/blob/master/Gautama_CapstonePoster.png?raw=true)
+![alt text](https://github.com/jasongautama/carpoolManager/blob/master/poster.png?raw=true)
