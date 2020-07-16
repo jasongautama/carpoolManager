@@ -11,7 +11,7 @@
     "firebase": "^5.8.6",
     "jest-haste-map": "^24.3.1",
     "js-yaml": "^3.13.1",
-    "lodash": "^4.17.14",
+    "lodash": "^4.17.19",
     "mem": "^5.1.1",
     "react": "^16.6.3",
     "react-native": "^0.60.3",
